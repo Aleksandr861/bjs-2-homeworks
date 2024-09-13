@@ -83,8 +83,9 @@ function makeWork (arrOfArr, func) {
     return maxWorkerResult;
   }
 }
+test
 // makeWork(1, 2, 3, 4, 5, summElementsWorker);
 // console.log(makeWork(arr, summElementsWorker));// максимум из 61, 206, 328, 284 => 328
 // console.log(makeWork(arr, differenceMaxMinWorker));
 // console.log(makeWork(arr, differenceEvenOddWorker)); 
-// console.log(makeWork(arr, averageEvenElementsWorker));
+// console.log(makeWork(arr, averageEvenElementsWorker));gi
