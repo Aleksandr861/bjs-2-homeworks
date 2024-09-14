@@ -71,17 +71,17 @@ function averageEvenElementsWorker(...arr) {
 
 
 
-function makeWork (arrOfArr, func) {
+function makeWork (arrOfArr, ...result) {
   let maxWorkerResult = -Infinity;
   for(let i = 0; i < arrOfArr.length; i++) {
-    const result =  arrOfArr[i];
+    const result = arrOfArr[i];
     if(result > maxWorkerResult) {
       maxWorkerResult = result;
     }
   }
   return maxWorkerResult;
 }
-makeWork(arrOfArr, ...arr);
+makeWork(arrOfArr, ...result);
 // makeWork(1, 2, 3, 4, 5, summElementsWorker);
 // console.log(makeWork(arr, summElementsWorker));// максимум из 61, 206, 328, 284 => 328
 // console.log(makeWork(arr, differenceMaxMinWorker));
