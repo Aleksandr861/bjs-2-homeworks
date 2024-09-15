@@ -28,11 +28,10 @@ function summElementsWorker(...arr) {
 function differenceMaxMinWorker(...arr) {
   let max = Math.max(...arr);
   let min = Math.min(...arr);
-  if(arr === 0) {
-    min = 0;
-    max = 0;
+  if(arr.length === 0) {
+    return 0;
   }
-  return max - min;
+    return max - min;
 }
 
 
@@ -60,28 +59,26 @@ function averageEvenElementsWorker(...arr) {
     if(arr[i] % 2 === 0) {
       sumEvenElement = sumEvenElement + arr[i];
       countEvenElement += 1;
-    }else if(arr === 0) {
-      min = 0;
-      max = 0;
     }
   }
-  
+  if(arr.length === 0) {
+    return 0;
+  }
   return sumEvenElement / countEvenElement;
 }
 
 
 
-function makeWork (arrOfArr, ...result) {
+function makeWork (arrOfArr, func) {
   let maxWorkerResult = -Infinity;
   for(let i = 0; i < arrOfArr.length; i++) {
-    const result = arrOfArr[i];
+    const result = func(...arrOfArr[i]);
     if(result > maxWorkerResult) {
       maxWorkerResult = result;
     }
   }
   return maxWorkerResult;
 }
-makeWork(arrOfArr, ...result);
 // makeWork(1, 2, 3, 4, 5, summElementsWorker);
 // console.log(makeWork(arr, summElementsWorker));// максимум из 61, 206, 328, 284 => 328
 // console.log(makeWork(arr, differenceMaxMinWorker));
