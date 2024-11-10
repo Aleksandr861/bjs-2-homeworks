@@ -13,24 +13,22 @@ Student.prototype.setSubject = function (subjectName) {
 }
 
 Student.prototype.addMarks = function (...marks){
-    if('marks' in Student === false){
-        delete this.marks;   
-    } else {
-        this.marks = marks;
+    if(this.Student.hasOwnProperty('marks') === true){
+        this.marks += marks + ',';
     }
 }
 
-Student.prototype.getAverage = function (...marks) {
-    if('marks' in Student === false || this.marks === 0){
+Student.prototype.getAverage = function () {
+    if(this.Student.hasOwnProperty('marks') === false || this.marks.length === 0){
         return 0;
-    } else {
-        marks.reduce((acc, item, index) => {
+    } 
+        this.marks.reduce((acc, item, index, arr) => {
             let sum = acc + item;
-            if (index === marks.length - 1){
-                return sum / marks.length;
+            if (index === arr.length - 1){
+                return sum / arr.length;
             }
             return sum;
-        },0)}; 
+        },0); 
 }
 
 Student.prototype.exclude = function (reason) {
