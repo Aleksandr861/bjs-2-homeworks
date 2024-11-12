@@ -19,17 +19,16 @@ Student.prototype.addMarks = function (...marks){
 }
 
 Student.prototype.getAverage = function () {
-     if(this.marks.hasOwnProperty('marks') === false || this.marks.length === 0){
+     if(this.marks === undefined){
          return 0;
      } 
-      let average = this.marks.reduce((acc, item, index, arr) => {
+      return this.marks.reduce((acc, item, index, arr) => {
             let sum = acc + item;
             if (index === arr.length - 1){
                 return sum / arr.length;
             }
             return sum;
         },0); 
-        return average;
 }
 
 Student.prototype.exclude = function (reason) {
